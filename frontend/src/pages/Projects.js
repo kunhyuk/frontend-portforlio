@@ -1,4 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { SocialIcon } from 'react-social-icons';
+import 'bootstrap/dist/css/bootstrap.css';
+import { Col, Row } from "react-bootstrap";
+
 
 function Projects(props) {
   // create state to hold projects
@@ -8,10 +12,10 @@ function Projects(props) {
     const data = await res.json()
     setProjects(data)
   }
-
-  useEffect(() => {
-    getProjectsData()
-  }, [])
+  getProjectsData()
+  // useEffect(() => {
+  //   getProjectsData()
+  // }, [getProjectsData])
 
   // //create function to make api call
   // const getProjectsData = async () => {
@@ -28,21 +32,29 @@ function Projects(props) {
 
   // define a function that will return the JSX needed once we get the data
   const loaded = () => {
-    return projects.map((project) => (
-      <div>
+    return projects.map((project, index) => (
+      
+      <Col key={index} xs={12} md={4} className="projectcards border border-primary">
+        <br>
+        </br>
         <h1>{project.name}</h1>
-        <img src={project.image} />
-        <a href={project.git}>
-          <button>Github</button>
-        </a>
-        <a href={project.live}>
+        <img className = "projectimage" src={project.image} alt="project"/>
+        {/* <a href={project.git}>
+          <button>Github</button> */}
+        {/* </a> */}
+        {/* <a href={project.live}>
           <button>live site</button>
-        </a>
+        </a>  */}
+        <div>
+      <SocialIcon className="icons" network="sharethis"url={project.live} label="live project"/>
+      <SocialIcon className="icons" url={project.git} bgColor="#ff5a01" label="github repo"/>
       </div>
+      </Col>
+      
     ));
   };
 
-  return projects ? loaded() : <h1>Loading...</h1>;
+  return projects ?   <Row className="align-items-center">{loaded()} </Row> : <h1>Loading...</h1>;
 }
 
 export default Projects;

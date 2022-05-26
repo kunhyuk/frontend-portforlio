@@ -36,3 +36,54 @@
     transform: rotate(360deg);
   }
 }
+
+
+header {
+  color: white;
+  font-size:xx-large
+}
+
+.links{
+  color: white;
+
+  
+}
+
+.icons {
+  margin: 5px
+}
+
+.projectcards {
+  background-color: antiquewhite;
+  color: black;
+  text-align: center;
+  margin: auto;
+
+}
+
+.projectimage {
+
+  height:400px;
+  width: 300px;
+  
+}
+
+.educationpic {
+  width: 400px;
+  height: 400px;
+}
+
+.headshot {
+  width: 300px;
+  height: 400px;
+}
+
+.footer{
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgb(235, 195, 64);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

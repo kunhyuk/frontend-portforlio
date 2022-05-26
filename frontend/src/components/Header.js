@@ -13,16 +13,16 @@ function Header(props) {
 
   return (
     <header>
-      <h1>My Portfolio Page</h1>
+      <h1>Kunhyuk's Portfolio</h1>
       <nav style={navStyle}>
-        <Link to="/">
-          <div>HOME</div>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <div className="links">HOME</div>
         </Link>
-        <Link to="/about">
-          <div>ABOUT</div>
+        <Link to="/about" style={{ textDecoration: 'none' }}>
+          <div className="links">ABOUT</div>
         </Link>
-        <Link to="/projects">
-          <div>PROJECTS</div>
+        <Link to="/projects" style={{ textDecoration: 'none' }}>
+          <div className="links">PROJECTS</div>
         </Link>
       </nav>
     </header>

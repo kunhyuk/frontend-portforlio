@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function About(props) {
   // create state to hold about data
@@ -8,10 +8,10 @@ function About(props) {
     const data = await res.json();
     setAbout(data)
   }
-
-  useEffect(() => {
-    getAboutData()
-  }, [])
+  getAboutData()
+  // useEffect(() => {
+  //   getAboutData()
+  // }, [getAboutData])
   // create function to make api call
   // const getAboutData = async () => {
   //   // make api call and get response
@@ -28,11 +28,16 @@ function About(props) {
   // define a function that will return the JSX needed once we get the data
   const loaded = () => (
     <div>
-      <h2>{about.name}</h2>
-      <h3>{about.email}</h3>
-      <p>{about.bio}</p>
+      <h1>Name: {about.name}</h1>
+      <img className="headshot" src={about.headshot} alt = "profile"/>
+      <h3>Bio: {about.bio}</h3>
+      <h1>Education</h1>
+      <img className="educationpic" src={about.educationpic[0]} alt = "profile"/>
+      <img className="educationpic" src={about.educationpic[1]} alt = "profile"/>
+      
     </div>
   );
+
 
   // if data arrives return the result of loaded, if not, an h1 that says loading
   return about ? loaded() : <h1>Loading...</h1>;
