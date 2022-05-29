@@ -39,6 +39,7 @@ function Projects(props) {
         </br>
         <h1>{project.name}</h1>
         <img className = "projectimage" src={project.image} alt="project"/>
+        <h3>{project.description}</h3>
         {/* <a href={project.git}>
           <button>Github</button> */}
         {/* </a> */}
